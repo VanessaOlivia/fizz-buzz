@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+    id:  createTable
+    author:  chodaton vanessa
+    changes:
+      -  createTable:
+         columns:
+           - column:
+              name:  id
+              type:  int
+              autoIncrement: true
+              constraints:
+                nullable: false
+                primaryKey: true
+                constraintName: id_unique_pk
+           - column:
+               name: int1
+               type: int
+           - column:
+               name: int2
+               type: int
+           - column:
+               name: result_limit
+               type: int
+           - column:
+               name: str1
+               type: varchar(255)
+           - column:
+               name: str2
+               type: varchar(255)
+           - column:
+               name: nbHits
+               type: int
+         schemaName:  public
+         tableName:  request_params
+      - addUniqueConstraint:
+        columnNames: int1, int2, result_limit, str1, str2
+        constraintName: req_params_unique
+        tableName:  request_params
