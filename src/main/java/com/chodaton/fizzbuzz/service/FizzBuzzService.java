@@ -21,7 +21,10 @@ public class FizzBuzzService {
         List<String> results = new ArrayList<>();
         for (int i = 1; i <= input.getLimit(); i++) {
             String truncate = String.valueOf(i);
-            if(i% input.getInt1() == 0){
+            if(i% input.getInt1() == 0 && i% input.getInt2() == 0){
+                truncate = input.getStr1() + input.getStr2();
+            }
+            else if(i% input.getInt1() == 0){
                 truncate = input.getStr1();
             }
             else if(i% input.getInt2() == 0){
