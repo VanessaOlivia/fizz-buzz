@@ -1,8 +1,8 @@
 package com.chodaton.fizzbuzz.model.params.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
 
+import javax.persistence.*;
 
 
 @Getter
