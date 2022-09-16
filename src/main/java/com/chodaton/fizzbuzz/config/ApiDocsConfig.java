@@ -16,10 +16,10 @@ public class ApiDocsConfig {
                 .version("1")
                 .summary("fizz-buzz REST server")
                 .description("REST API endpoints that:\n" +
-                        "- Accepts five parameters: three integers int1, int2 and limit, and two strings str1 and str2.\n" +
-                        "- Returns a list of strings with numbers from 1 to limit, where: all multiples of int1 are replaced" +
+                        "1. Accepts five parameters: three integers int1, int2 and limit, and two strings str1 and str2.\n" +
+                        " And then Returns a list of strings with numbers from 1 to limit, where: all multiples of int1 are replaced \n" +
                         " by str1, all multiples of int2 are replaced by str2, all multiples of int1 and int2 are replaced by str1str2.\n " +
-                        "- Add a statistics endpoint allowing users to know what the most frequent request has been"));
+                        "2. Add a statistics endpoint allowing users to know what the most frequent request has been"));
 
     }
 
