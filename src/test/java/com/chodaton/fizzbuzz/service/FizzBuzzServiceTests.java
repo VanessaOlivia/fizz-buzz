@@ -4,13 +4,13 @@ import com.chodaton.fizzbuzz.exception.RequestNotFound;
 import com.chodaton.fizzbuzz.model.dto.FrequentRequestDTO;
 import com.chodaton.fizzbuzz.model.entity.TruncateRequestParams;
 import com.chodaton.fizzbuzz.repository.FizzBuzzRepository;
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.mockito.*;
 import org.springframework.boot.test.context.SpringBootTest;
+
 
 import java.util.Optional;
 
@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 
-@SpringBootTest
+@SpringBootTest(properties = "spring.main.lazy-initialization=true")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
  class FizzBuzzServiceTests {
 
@@ -48,7 +48,7 @@ import static org.mockito.Mockito.*;
         String[] expectedData = new String[]{"1", "fizz", "buzz", "fizz", "5", "fizzbuzz", "7", "fizz", "buzz", "fizz", "11", "fizzbuzz", "13", "fizz", "buzz"};
 
         //Then
-        Assert.assertArrayEquals(expectedData, truncateData);
+        Assertions.assertArrayEquals(expectedData, truncateData);
     }
 
     @Test

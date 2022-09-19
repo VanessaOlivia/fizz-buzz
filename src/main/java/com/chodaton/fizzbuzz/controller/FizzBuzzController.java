@@ -9,14 +9,13 @@ import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@SecurityRequirement(name = "fizzbuzzapi_acces")
 @RestController
 @RequestMapping("fizz-buzz")
 public class FizzBuzzController {
@@ -24,7 +23,7 @@ public class FizzBuzzController {
     @Autowired
     private FizzBuzzService fizzBuzzService;
 
-    @SecurityRequirement(name = "fizzbuzzapi_acces")
+
     @GetMapping
     @Operation(summary = "Get Truncate Data list",
             description = "Returns a list of strings with numbers from 1 to limit, where: all multiples of int1 are replaced by str1, \n all multiples of int2 are replaced by str2, all multiples of int1 and int2 are replaced by str1str2.")
@@ -38,7 +37,7 @@ public class FizzBuzzController {
         return this.fizzBuzzService.getValues(requestParams);
     }
 
-    @SecurityRequirement(name = "fizzbuzzapi_acces")
+
     @GetMapping(path="frequent-request", produces="application/json")
     @ExceptionHandler(RequestNotFound.class)
     @ResponseStatus(HttpStatus.OK)

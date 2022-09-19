@@ -1,14 +1,10 @@
 package com.chodaton.fizzbuzz;
 
-import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
-import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
-import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-@SecurityScheme(name = "fizzbuzzapi_acces", scheme = "basic",
-		type = SecuritySchemeType.HTTP, in = SecuritySchemeIn.HEADER)
-@SpringBootApplication
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class FizzBuzzApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FizzBuzzApplication.class, args);
