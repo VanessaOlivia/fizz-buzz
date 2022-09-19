@@ -24,9 +24,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc(addFilters = false)
 @SpringBootTest(properties = "spring.main.lazy-initialization=true")
 public class FizzBuzzControllerTests {
-
-    @Autowired
-    private WebApplicationContext webApplicationContext;
     @Autowired
     private MockMvc mockMvc;
     @Autowired
