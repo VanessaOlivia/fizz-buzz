@@ -22,7 +22,7 @@ import static org.mockito.Mockito.*;
 
 @SpringBootTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class FizzBuzzServiceTests {
+ class FizzBuzzServiceTests {
 
     @InjectMocks
     FizzBuzzService fizzBuzzService;

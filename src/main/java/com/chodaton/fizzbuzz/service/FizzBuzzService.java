@@ -49,7 +49,7 @@ public class FizzBuzzService {
 
     public FrequentRequestDTO getMostFrequentRequest(){
         return this.fizzBuzzRepository.findFirstByOrderByNbHitsDesc().map(FrequentRequestDTO::new)
-                .orElseThrow(()->new RequestNotFound());
+                .orElseThrow(RequestNotFound::new);
     }
 
     public Optional<TruncateRequestParams>  findRequestParams(TruncateRequestParams requestParams){

@@ -28,10 +28,9 @@ public class FizzBuzzController {
     @GetMapping
     @Operation(summary = "Get Truncate Data list",
             description = "Returns a list of strings with numbers from 1 to limit, where: all multiples of int1 are replaced by str1, \n all multiples of int2 are replaced by str2, all multiples of int1 and int2 are replaced by str1str2.")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "OK", content = {@Content(mediaType = "application/json",
+    @ApiResponse(responseCode = "200", description = "OK", content = {@Content(mediaType = "application/json",
                     array = @ArraySchema(schema = @Schema(implementation = String.class)))
-            })})
+            })
     List<String> getTruncateData(@RequestParam Integer int1, @RequestParam Integer int2,
                                  @RequestParam Integer limit, @RequestParam String str1, String str2){
         TruncateRequestParams requestParams =  new TruncateRequestParams(int1, int2, limit, str1, str2);
@@ -45,10 +44,8 @@ public class FizzBuzzController {
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Statistics endpoint",
             description = "Return the parameters corresponding to the most used request, as well as the number of hits for this request")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "OK"),
-            @ApiResponse(responseCode = "204", description = "Aucun contenu trouvé", content = {@Content()})
-    })
+    @ApiResponse(responseCode = "200", description = "OK")
+    @ApiResponse(responseCode = "204", description = "Aucun contenu trouvé", content = {@Content()})
     FrequentRequestDTO getFrequentRequest(){
         return this.fizzBuzzService.getMostFrequentRequest();
     }
