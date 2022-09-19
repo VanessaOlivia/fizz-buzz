@@ -1,8 +1,7 @@
 package com.chodaton.fizzbuzz.repository;
 
-import com.chodaton.fizzbuzz.model.params.entity.TruncateRequestParams;
+import com.chodaton.fizzbuzz.model.entity.TruncateRequestParams;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

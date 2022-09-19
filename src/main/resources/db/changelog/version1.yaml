@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-    id:  createTable
+    id:  create.Table.User
     author:  chodaton vanessa
     changes:
       -  createTable:

@@ -2,7 +2,7 @@ package com.chodaton.fizzbuzz.service;
 
 import com.chodaton.fizzbuzz.exception.RequestNotFound;
 import com.chodaton.fizzbuzz.model.dto.FrequentRequestDTO;
-import com.chodaton.fizzbuzz.model.params.entity.TruncateRequestParams;
+import com.chodaton.fizzbuzz.model.entity.TruncateRequestParams;
 import com.chodaton.fizzbuzz.repository.FizzBuzzRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,15 +47,16 @@ public class FizzBuzzService {
        this.fizzBuzzRepository.save(requestParams);
     }
 
+    public FrequentRequestDTO getMostFrequentRequest(){
+        return this.fizzBuzzRepository.findFirstByOrderByNbHitsDesc().map(FrequentRequestDTO::new)
+                .orElseThrow(()->new RequestNotFound());
+    }
+
     public Optional<TruncateRequestParams>  findRequestParams(TruncateRequestParams requestParams){
         return this.fizzBuzzRepository.findByInt1AndInt2AndLimitAndStr1AndStr2(requestParams.getInt1(),
                 requestParams.getInt2(), requestParams.getLimit(), requestParams.getStr1(),
                 requestParams.getStr2());
     }
 
-    public FrequentRequestDTO getMostFrequentRequest(){
-        return this.fizzBuzzRepository.findFirstByOrderByNbHitsDesc().map(FrequentRequestDTO::new)
-                .orElseThrow(()->new RequestNotFound());
-    }
 
 }

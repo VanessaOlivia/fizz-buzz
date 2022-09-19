@@ -1,4 +1,4 @@
-package com.chodaton.fizzbuzz.model.params.entity;
+package com.chodaton.fizzbuzz.model.entity;
 
 import lombok.*;
 

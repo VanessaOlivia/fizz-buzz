@@ -1,7 +1,7 @@
 package com.chodaton.fizzbuzz.model.dto;
 
-import com.chodaton.fizzbuzz.model.params.entity.TruncateRequestParams;
-import com.chodaton.fizzbuzz.util.APINames;
+import com.chodaton.fizzbuzz.model.entity.TruncateRequestParams;
+import com.chodaton.fizzbuzz.util.constant.APINames;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

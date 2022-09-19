@@ -2,7 +2,7 @@ package com.chodaton.fizzbuzz.controller;
 
 import com.chodaton.fizzbuzz.exception.RequestNotFound;
 import com.chodaton.fizzbuzz.model.dto.FrequentRequestDTO;
-import com.chodaton.fizzbuzz.model.params.entity.TruncateRequestParams;
+import com.chodaton.fizzbuzz.model.entity.TruncateRequestParams;
 import com.chodaton.fizzbuzz.service.FizzBuzzService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
